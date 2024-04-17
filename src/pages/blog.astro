@@ -1,8 +1,24 @@
+---
+import Header from "../components/Header.astro";
 
+const titlePage = 'blog'
+---
 
-<section>
-    <a href="/">Inicio</a>
-    <a href="/about/">Sobre mi</a>
-    <a href="/blog/">Blog</a>
-    <h1>Bienvenido a mi blog</h1>
-</section>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{titlePage}</title>
+    </head>
+    <section>
+        <Header/>
+        <h1>Bienvenido a mi blog</h1>
+        <p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.</p>
+        <ul>
+            <li>
+                <a href="/posts/tutorial-javascript_obj/">Tutorial javascript obj</a>
+            </li>
+        </ul>
+    </section>
+</html>

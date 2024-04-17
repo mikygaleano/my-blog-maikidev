@@ -1,0 +1,10 @@
+---
+import Header from "../components/Header.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Header/>
+<h1>{frontmatter.title}</h1>
+<p>Escrito por {frontmatter.author}</p>
+<slot />
