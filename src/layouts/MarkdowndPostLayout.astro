@@ -1,0 +1,21 @@
+---
+import BaseLayouts from './BaseLayouts.astro'
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Post {frontmatter.title}</title>
+    </head>
+    <body>
+        <BaseLayouts>
+            <h2>Post</h2>
+            <h3>{frontmatter.title}</h3>
+            <p>Escrito por {frontmatter.author}</p>
+            <slot />
+        </BaseLayouts>
+    </body>
+</html>

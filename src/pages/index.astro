@@ -1,19 +1,8 @@
 ---
+import BaseLayouts from "../layouts/BaseLayouts.astro";
 
+const pageTitle = "Página de inicio";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<a href="/">Inicio</a>
-		<a href="/about/">Sobre mi</a>
-		<a href="/blog/">Blob</a>
-		<h1>mi blog maikidev</h1>
-	</body>
-</html>
+<BaseLayouts titlePage={pageTitle}>
+  <h2>Mi impresionante subtítulo del blog</h2>
+</BaseLayouts>
