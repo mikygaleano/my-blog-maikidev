@@ -13,10 +13,13 @@ const { titlePage } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{titlePage}</title>
 	</head>
-	<body class="w-full min-h-full">
+	<body class="w-full min-h-screen">
 		<Header/>
-		<h1>Mí blog</h1>
-        <slot/>
+        <section class="w-full min-h-screen flex justify-center bg-black">
+			<div class="w-11/12 min-h-screen bg-white p-2">
+				<slot/>
+			</div>
+		  </section>
 		<Footer/>
 	</body>
 </html>

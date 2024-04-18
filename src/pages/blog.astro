@@ -1,5 +1,4 @@
 ---
-import Header from "../components/Header.astro";
 import BaseLayouts from "../layouts/BaseLayouts.astro";
 
 const titlePage = 'blog'
@@ -9,16 +8,8 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{titlePage}</title>
-    </head>
-    <BaseLayouts>
-        <section>
+
+    <BaseLayouts titlePage={titlePage}>
             <h1>Bienvenido a mi blog</h1>
             <p>Aquí es donde publicare mi viaje en la programacíon</p>
             <ul>
@@ -29,6 +20,4 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
                         </li>)
                     }
             </ul>
-        </section>
     </BaseLayouts>
-</html>

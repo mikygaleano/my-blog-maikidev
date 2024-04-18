@@ -17,11 +17,13 @@ const arraySocialMedia = [
 ]
 ---
 
-<footer class="w-full h-[100px] text-sm flex flex-col gap-1 p-2 relative bottom-0 bg-white">
-  <p class="mb-2">¡Más información sobre mis proyectos en...</p>
-  {
-    arraySocialMedia.map(({ platform, username }) => 
-      <SocialMedia platform={platform} username={username}/>
-    )
-  }
+<footer class="w-full h-[100px] flex justify-center text-sm relative bottom-0 bg-black">
+  <div class="w-11/12 flex flex-col gap-1 p-2 bg-white">
+    <p class="mb-2">¡Más información sobre mis proyectos en...</p>
+    {
+      arraySocialMedia.map(({ platform, username }) => 
+        <SocialMedia platform={platform} username={username}/>
+      )
+    }
+  </div>
 </footer>
