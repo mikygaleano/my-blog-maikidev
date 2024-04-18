@@ -1,9 +1,15 @@
 ---
 import Header from "../components/Header.astro";
+import BaseLayouts from "../layouts/BaseLayouts.astro";
 
 const titlePage = 'blog'
+
+const allPosts = await Astro.glob('../pages/posts/*.md');
+
 ---
 
+
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -11,14 +17,18 @@ const titlePage = 'blog'
         <meta name="generator" content={Astro.generator} />
         <title>{titlePage}</title>
     </head>
-    <section>
-        <Header/>
-        <h1>Bienvenido a mi blog</h1>
-        <p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.</p>
-        <ul>
-            <li>
-                <a href="/posts/tutorial-javascript_obj/">Tutorial javascript obj</a>
-            </li>
-        </ul>
-    </section>
+    <BaseLayouts>
+        <section>
+            <h1>Bienvenido a mi blog</h1>
+            <p>Aquí es donde publicare mi viaje en la programacíon</p>
+            <ul>
+                {
+                    allPosts.map((post) => 
+                        <li>
+                            <a href={post.url}>{post.frontmatter.title}</a>
+                        </li>)
+                    }
+            </ul>
+        </section>
+    </BaseLayouts>
 </html>

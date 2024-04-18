@@ -1,11 +1,27 @@
 ---
 import SocialMedia from "./SocialMedia.astro";
 
-const platform = "github";
-const username = "mikygaleano";
+const arraySocialMedia = [
+  {
+    platform : "github",
+    username : "mikygaleano"
+  },
+  {
+    platform : "instagram",
+    username : "maikidev"
+  },
+  {
+    platform : "linkedin",
+    username : "michaelgaleano"
+  }
+]
 ---
 
-<footer>
-  <p>¡Más información sobre mis proyectos en...</p>
-  <SocialMedia platform={platform} username={username}/>
+<footer class="w-full h-[100px] text-sm flex flex-col gap-1 p-2 relative bottom-0 bg-white">
+  <p class="mb-2">¡Más información sobre mis proyectos en...</p>
+  {
+    arraySocialMedia.map(({ platform, username }) => 
+      <SocialMedia platform={platform} username={username}/>
+    )
+  }
 </footer>
