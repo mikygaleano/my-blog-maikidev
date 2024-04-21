@@ -1,8 +1,52 @@
 ---
 import BaseLayouts from "../layouts/BaseLayouts.astro";
 
-const pageTitle = "Página de inicio";
+const pageTitle: string = "Página de inicio";
 ---
 <BaseLayouts titlePage={pageTitle}>
   <h1 class="text-center">MaikiBlog</h1>
+  <div id='animate' class='w-full h-full relative top-14 flex flex-1 justify-center items-center'>
+
+  </div>
 </BaseLayouts>
+
+
+<script>
+
+const interval: number = 1000;
+
+document.addEventListener('DOMContentLoaded', function () {
+  const container: HTMLElement | null = document.getElementById('animate');
+  const containerWidth = container.offsetWidth - 150;
+  const containerHeight = container.offsetHeight;
+
+  let lastRenderTime: number = 0;
+
+
+  const createCircle: () => void = ()=> {
+    const newCircle: HTMLDivElement = document.createElement('div');
+
+    newCircle.className = 'w-20 h-20 rounded-full bg-blue-500 absolute animate-moveUp';
+
+    // Posición aleatoria dentro del contenedor
+    const randomX: number = Math.random() * containerWidth;
+    const randomY: number = Math.random() * containerHeight;
+    newCircle.style.left = `${randomX}px`
+    newCircle.style.right = `${randomY}px`
+
+    container.appendChild(newCircle);
+
+
+    requestAnimationFrame(createCircle), interval;
+
+  };
+
+  // Generar círculos de manera continua
+  requestAnimationFrame(createCircle);
+});
+
+
+
+
+</script>
+

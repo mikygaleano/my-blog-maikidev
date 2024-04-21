@@ -11,8 +11,6 @@ tags: ["astro", "bloguear", "aprender en público"]
 ---
 
 
-
-# Obj javascript #
 ---
 
 ## Obj literales y prototipos ##
