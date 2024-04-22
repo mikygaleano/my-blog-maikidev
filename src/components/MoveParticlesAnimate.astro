@@ -1,0 +1,53 @@
+---
+
+---
+
+
+<div id='animate' class='w-full h-full relative top-14 flex flex-1 justify-center items-start'>
+
+</div>
+
+<script>
+
+    // Función para crear un solo círculo
+    const createCircle = () => {
+      const container = document.getElementById('animate');
+      if (!container) return; // Salir si el contenedor no está disponible
+  
+      const containerWidth = container.offsetWidth - 150;
+      const containerHeight = container.offsetHeight - 80;
+      
+      // Crear un solo círculo
+      const newCircle = document.createElement('figure');
+      newCircle.className = 'circles w-20 h-20 rounded-full bg-blue-500 absolute animate-moveParticles';
+  
+      // Posición aleatoria dentro del contenedor
+      const randomX = Math.random() * containerWidth;
+      const randomY = Math.random() * containerHeight;
+      newCircle.style.left = `${randomX}px`;
+      newCircle.style.top = `${randomY}px`;
+  
+      container.appendChild(newCircle);
+    };
+  
+    // Función para limpiar los círculos después de un cierto tiempo
+    const clearCircles = () => {
+      const circles = document.querySelectorAll('.circles');
+      circles.forEach(circle => circle.remove());
+    };
+  
+    // Función de inicialización
+    const init = () => {
+      // Llamar a createCircle() cada 200 milisegundos
+      setInterval(createCircle, 200);
+  
+      // Llamar a clearCircles() cada 2000 milisegundos (2 segundos)
+      setInterval(clearCircles, 2000);
+    };
+  
+    // Ejecutar la inicialización cuando la página se carga y cuando se redimensiona la ventana
+    window.addEventListener('DOMContentLoaded', init);
+    window.addEventListener('resize', createCircle);
+  
+  
+  </script>

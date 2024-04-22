@@ -1,8 +1,12 @@
 ---
+import MoveParticlesAnimate from "../components/MoveParticlesAnimate.astro";
 import BaseLayouts from "../layouts/BaseLayouts.astro";
 
-const pageTitle = "Página de inicio";
+const pageTitle: string = "Página de inicio";
 ---
 <BaseLayouts titlePage={pageTitle}>
   <h1 class="text-center">MaikiBlog</h1>
+  <MoveParticlesAnimate/>
 </BaseLayouts>
+
+
