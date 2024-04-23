@@ -1,5 +1,6 @@
 ---
 
+
 ---
 
 
@@ -9,21 +10,37 @@
 
 <script>
 
+    const listIcons: string[] = [
+        './css3-svgrepo-com.svg',
+        '/html5-svgrepo-com.svg',
+        './javascript-svgrepo-com.svg',
+        './react-javascript-js-framework-facebook-svgrepo-com.svg'
+      ]
+
     // Función para crear un solo círculo
     const createCircle = () => {
       const container = document.getElementById('animate');
       if (!container) return; // Salir si el contenedor no está disponible
   
-      const containerWidth = container.offsetWidth - 150;
+      const containerWidth = container.offsetWidth - 100;
       const containerHeight = container.offsetHeight - 80;
+
+      let randomImg: number = Math.floor(Math.random() * listIcons.length);
+
       
       // Crear un solo círculo
       const newCircle = document.createElement('figure');
-      newCircle.className = 'circles w-20 h-20 rounded-full bg-blue-500 absolute animate-moveParticles';
+      const img = document.createElement('img');
+      img.className = 'w-full h-full rounded-full object-contain'
+      newCircle.className = 'circles opacity-5 w-20 h-20 rounded-full bg-blue-500 absolute animate-moveParticles';
   
+      img.src = listIcons[randomImg];
+      newCircle.append(img);
+
+
       // Posición aleatoria dentro del contenedor
-      const randomX = Math.random() * containerWidth;
-      const randomY = Math.random() * containerHeight;
+      const randomX = Math.floor(Math.random() * containerWidth);
+      const randomY = Math.floor(Math.random() * containerHeight);
       newCircle.style.left = `${randomX}px`;
       newCircle.style.top = `${randomY}px`;
   
