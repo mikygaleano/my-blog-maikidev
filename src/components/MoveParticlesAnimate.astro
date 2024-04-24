@@ -4,17 +4,18 @@
 ---
 
 
-<div id='animate' class='w-full h-full relative top-14 flex flex-1 justify-center items-start'>
-
+<div id='animate' class='w-full h-full relative top-14 flex flex-1 justify-center items-start bg-transparent'>
+  <slot/>
 </div>
 
 <script>
 
     const listIcons: string[] = [
-        './css3-svgrepo-com.svg',
-        '/html5-svgrepo-com.svg',
-        './javascript-svgrepo-com.svg',
-        './react-javascript-js-framework-facebook-svgrepo-com.svg'
+        './icons/css3-svgrepo-com.svg',
+        './icons/html5-svgrepo-com.svg',
+        './icons/javascript-svgrepo-com.svg',
+        './icons/react-javascript-js-framework-facebook-svgrepo-com.svg',
+        './icons/python-package-index-svgrepo-com.svg'
       ]
 
     // Función para crear un solo círculo
@@ -56,7 +57,7 @@
     // Función de inicialización
     const init = () => {
       // Llamar a createCircle() cada 200 milisegundos
-      setInterval(createCircle, 200);
+      setInterval(createCircle, 700);
   
       // Llamar a clearCircles() cada 2000 milisegundos (2 segundos)
       setInterval(clearCircles, 2000);
