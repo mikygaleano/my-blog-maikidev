@@ -5,7 +5,16 @@ import BaseLayouts from "../layouts/BaseLayouts.astro";
 const pageTitle: string = "Página de inicio";
 ---
 <BaseLayouts titlePage={pageTitle}>
-  <h1 class="text-center">MaikiBlog</h1>
+  <MoveParticlesAnimate>
+    <div class="w-96 h-52 flex flex-col gap-2 justify-center items-center m-auto absolute top-14 rounded-md text-7xl max-md:text-3xl">
+      <span class="text-center z-10">Bienvenidos a</span>
+      <h1 class="text-center z-10">MaikiBlog!!</h1>
+      <div class="">
+        <figure class="w-full h-32 mt-10">
+          <img class="w-full h-full z-10" src="../../public/astronaut.png" alt="">
+        </figure>
+      </div>
+    </div>
   <MoveParticlesAnimate/>
 </BaseLayouts>
 
