@@ -1,11 +1,9 @@
 ---
 
-
 ---
 
 
-<div id='animate' class='w-full h-full relative top-14 flex flex-1 justify-center items-start bg-transparent'>
-  <slot/>
+<div id='animate' class='max-w-full h-full absolute left-1/4 max-md:left-2/3 bg-transparent'>
 </div>
 
 <script>
@@ -23,8 +21,8 @@
       const container = document.getElementById('animate');
       if (!container) return; // Salir si el contenedor no está disponible
   
-      const containerWidth = container.offsetWidth - 100;
-      const containerHeight = container.offsetHeight - 80;
+      const containerWidth = (window.innerWidth - container.offsetWidth) - 600;
+      const containerHeight = window.innerHeight - container.offsetHeight;
 
       let randomImg: number = Math.floor(Math.random() * listIcons.length);
 
@@ -33,7 +31,7 @@
       const newCircle = document.createElement('figure');
       const img = document.createElement('img');
       img.className = 'w-full h-full rounded-full object-contain'
-      newCircle.className = 'circles opacity-5 w-20 h-20 rounded-full bg-blue-500 absolute animate-moveParticles';
+      newCircle.className = 'circles opacity-5 w-20 h-20 rounded-full bg-blue-500 relative animate-moveParticles';
   
       img.src = listIcons[randomImg];
       newCircle.append(img);
