@@ -3,6 +3,7 @@ import MoveParticlesAnimate from "../components/MoveParticlesAnimate.astro";
 import BaseLayouts from "../layouts/BaseLayouts.astro";
 
 const pageTitle: string = "Página de inicio";
+const astroNauta: string = './public/astronaut.png';
 ---
 <BaseLayouts titlePage={pageTitle} background={'bg-slate-700'}>
     <MoveParticlesAnimate/>
@@ -12,7 +13,7 @@ const pageTitle: string = "Página de inicio";
         <h1 class="text-center z-10 pt-1">MaikiBlog!!</h1>
         <div class="pt-32">
           <figure class="w-full h-32 mt-10">
-            <img class="w-full h-full z-10" src="./public/astronaut.png" alt="">
+            <img class="w-full h-full z-10" src={astroNauta} alt="">
           </figure>
         </div>
       </div>
