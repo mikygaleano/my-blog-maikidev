@@ -1,6 +1,8 @@
 ---
 import BaseLayouts from "../layouts/BaseLayouts.astro";
 
+import Etiquetas from "./tags/etiquetas.astro";
+
 const titlePage = 'blog'
 
 const allPosts = await Astro.glob('../pages/posts/*.md');
@@ -20,4 +22,6 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
                         </li>)
                     }
             </ul>
+            <p>Buscar por etiquetas</p>
+            <Etiquetas/>
     </BaseLayouts>

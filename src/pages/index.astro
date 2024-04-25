@@ -1,12 +1,11 @@
 ---
-import MoveParticlesAnimate from "../components/MoveParticlesAnimate.astro";
 import BaseLayouts from "../layouts/BaseLayouts.astro";
 
+
 const pageTitle: string = "Página de inicio";
-const astroNauta: string = './public/astronaut.png';
+const astroNauta: string = '../../public/astronaut.png';
 ---
 <BaseLayouts titlePage={pageTitle} background={'bg-slate-700'}>
-    <MoveParticlesAnimate/>
     <div class="w-full h-full grid grid-cols-3 gap-5">
       <div class="w-full h-90 col-start-2 max-md:row-start-1 flex flex-col gap-2 justify-center items-center rounded-md text-white text-3xl">
         <span class="text-center z-10 pt-10">Bienvenidos a</span>
