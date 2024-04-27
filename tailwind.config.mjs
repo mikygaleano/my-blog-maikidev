@@ -7,12 +7,24 @@ module.exports = {
 			moveParticles: {
 				'0%': {opacity: '0'},
 				'10%': {opacity: '1'},	
-			}
+			},
+			backgroundGradientKeyframes: {
+				'0%': { color: '#ffff00' },
+				'50%': { color: '#7f00b2' },
+				'100%': { color: '#ffff81' },
+			  },		
 		},
 		animation: {
-			moveParticles: 'moveParticles 1s linear infinite'
-		}
+			moveParticles: 'moveParticles 1s linear infinite1s linear infinite',
+			backgroundGradientAnimation: 'backgroundGradientKeyframes 3s linear infinite',
+		},
+		fontFamily: {
+			'BlackStormBlack': ['MyFont', 'sans-serif'],
+		  }
 	  },
 	},
 	plugins: [],
+	fontFamily: {
+		'MyFont': ['public/fonts/ZilapBlackStormBlack-6wYD.ttf'], // Reemplaza con la URL de tu fuente
+	  }
   };
