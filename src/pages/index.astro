@@ -1,11 +1,15 @@
 ---
+import MoveParticlesAnimate from "../components/MoveParticlesAnimate.astro";
 import BaseLayouts from "../layouts/BaseLayouts.astro";
 
 
 const pageTitle: string = "Página de inicio";
-const astroNauta: string = 'public/astronaut.png';
+const astroNauta: string = '/astronaut.png';
+
 ---
+
 <BaseLayouts titlePage={pageTitle} background={'bg-slate-700'}>
+    <MoveParticlesAnimate/>
     <div class="w-full h-full m-auto grid grid-cols-2 items-center max-md:grid-flow-col max-md:grid-rows-2 gap-1">
       <div class="w-full h-full -rotate-3 col-start-1 flex flex-col gap-2 justify-center items-center max-md:ml-[50%]">
         <div class="w-auto animate-bounce -mb-14">
