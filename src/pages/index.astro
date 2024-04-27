@@ -6,21 +6,19 @@ const pageTitle: string = "Página de inicio";
 const astroNauta: string = 'public/astronaut.png';
 ---
 <BaseLayouts titlePage={pageTitle} background={'bg-slate-700'}>
-    <div class="w-full h-full grid grid-cols-3 gap-5">
-      <div class="w-full h-90 -rotate-3 col-start-2 max-md:row-start-1 flex flex-col gap-2 justify-center items-center rounded-md">
+    <div class="w-full h-full m-auto grid grid-cols-2 items-center max-md:grid-flow-col max-md:grid-rows-2 gap-1">
+      <div class="w-full h-full -rotate-3 col-start-1 flex flex-col gap-2 justify-center items-center max-md:ml-[50%]">
         <div class="w-auto animate-bounce -mb-14">
-          <span class="text-center z-10 pt-10 animate-backgroundGradientAnimation text-7xl max-md:text-3xl font-black font-BlackStormBlack">¡Bienvenidos</span>
+          <span class="text-center pt-10 animate-backgroundGradientAnimation text-4xl max-md:text-3xl font-black font-BlackStormBlack">¡Bienvenidos</span>
         </div>
-        <h1 class="text-center z-10 pt-10 animate-backgroundGradientAnimation text-7xl max-md:text-3xl font-black font-BlackStormBlack">a MaikiBlog!</h1>
+        <h1 class="text-center pt-10 animate-backgroundGradientAnimation text-4xl max-md:text-3xl font-black font-BlackStormBlack">a MaikiBlog!</h1>
         <span class="pt-2 text-center text-white font-medium">Acompáñenme en este fantástico  viaje</span>
-        <a class="w-12 h-8 text-center flex items-center justify-center rounded-md shadow-lg bg-yellow-200 text-xl" href="/blog">Blog</a>
-        <div class="">
-          <figure class="w-full h-32 mt-10">
-            <img class="w-full h-full z-10" src={astroNauta} alt="">
-          </figure>
-        </div>
+      </div>
+      <div class="w-full h-full grid grid-cols-2 items-center gap-3 max-md:flex max-md:flex-col max-md:ml-[50%]">
+        <figure class="w-full h-fit">
+          <img class="w-full h-full col-start-1" src={astroNauta} alt="">
+        </figure>
+        <a class="w-12 h-8 col-start-2 text-center flex items-center justify-center rounded-md shadow-lg bg-yellow-200 text-xl hover:scale-100" href="/blog">Blog</a>
       </div>
     </div>
 </BaseLayouts>
-
-
