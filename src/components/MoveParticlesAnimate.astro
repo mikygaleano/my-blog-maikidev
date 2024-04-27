@@ -31,7 +31,7 @@
       const newCircle = document.createElement('figure');
       const img = document.createElement('img');
       img.className = 'w-full h-full rounded-full object-contain'
-      newCircle.className = 'circles opacity-5 w-20 h-20 rounded-full bg-blue-500 relative animate-moveParticles';
+      newCircle.className = 'circles opacity-[0.09] w-20 h-20 rounded-full bg-blue-500 relative animate-moveParticles';
   
       img.src = listIcons[randomImg];
       newCircle.append(img);
@@ -54,8 +54,8 @@
   
     // Función de inicialización
     const init = () => {
-      // Llamar a createCircle() cada 200 milisegundos
-      setInterval(createCircle, 700);
+      // Llamar a createCircle() cada 1 segundos
+      setInterval(createCircle, 955);
   
       // Llamar a clearCircles() cada 2000 milisegundos (2 segundos)
       setInterval(clearCircles, 2000);

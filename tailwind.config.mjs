@@ -5,8 +5,9 @@ module.exports = {
 	  extend: {
 		keyframes: {
 			moveParticles: {
-				'0%': {opacity: '0'},
-				'10%': {opacity: '1'},	
+				'0%': {opacity: '0.02'},
+				'50%': {opacity: '0.05'},
+				'100%': {opacity: '1'}
 			},
 			backgroundGradientKeyframes: {
 				'0%': { color: '#ffff00' },
