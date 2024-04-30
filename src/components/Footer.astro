@@ -17,16 +17,18 @@ const arraySocialMedia = [
 ]
 ---
 
-<footer class="w-full text-sm relative bottom-0 bg-white flex flex-row p-2">
-  <div class="max-w-[66%] h-4/5 max-md:h-full flex flex-col gap-1 p-3 border-r">
-    <p class="">¡Más información sobre mis proyectos en...</p>
-    {
-      arraySocialMedia.map(({ platform, username }) => 
-        <SocialMedia platform={platform} username={username}/>
-      )
-    }
-  </div>
-  <div class="max-w-full pt-3 pl-2">
-    <p class="">todos los derechos reservados Michael Nicolas Galeano</p>
+<footer class="w-full text-sm relative bottom-0 bg-white flex m-auto">
+  <div class="w-11/12 flex flex-row p-2 m-auto">
+    <div class="max-w-[66%] h-4/5 max-md:h-full flex flex-col gap-1 pt-3 pr-3 border-r">
+      <p class="">¡Más información sobre mis proyectos en...</p>
+      {
+        arraySocialMedia.map(({ platform, username }) => 
+          <SocialMedia platform={platform} username={username}/>
+        )
+      }
+    </div>
+    <div class="max-w-full pt-3 pl-2">
+      <p class="">todos los derechos reservados Michael Nicolas Galeano</p>
+    </div>
   </div>
 </footer>

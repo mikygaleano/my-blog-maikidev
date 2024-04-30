@@ -1,4 +1,5 @@
 ---
+import CardsPost from "../../components/CardsPost.astro";
 import BaseLayouts from "../../layouts/BaseLayouts.astro";
 
 export async function getStaticPaths() {
@@ -21,12 +22,6 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayouts titlePage={tag}>
-    <p>Entradas etiquetadas con {tag}</p>
-    <ul>
-        {posts.map((post) => 
-            <li><a href={post.url}>
-                {post.frontmatter.title}
-                </a>
-            </li>)}
-    </ul>
+  <p>Entradas etiquetadas con {tag}</p>
+  <CardsPost allPosts={posts} /> 
 </BaseLayouts>
