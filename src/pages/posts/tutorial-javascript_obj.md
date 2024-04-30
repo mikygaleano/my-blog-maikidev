@@ -2,11 +2,11 @@
 layout: ../../layouts/MarkdowndPostLayout.astro
 title: 'tutorial programacíon orientada a obj en javascript'
 pubDate: 2024-04-16
-description: 'Este es la primera publicación de mi nuevo blog Astro.'
+description: 'Este es la primera publicación de mi nuevo blog'
 author: 'Michael Nicolas Galeano'
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
-    alt: 'El logotipo completo de Astro.'
+    url: '/icons/javascript-svgrepo-com.svg'
+    alt: 'El logotipo Javascript.'
 tags: ["javascript", "bloguear", "obj", 'programación']
 ---
 

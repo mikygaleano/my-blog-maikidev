@@ -1,0 +1,22 @@
+---
+
+const { allPosts } = Astro.props;
+
+---
+
+<div class="w-full h-full mt-3 m-auto grid grid-flow-row grid-cols-3 max-md:grid-cols-2 max-md:justify-center max-sm:grid-cols-1 justify-start items-start gap-4">
+    {
+        allPosts.length < 1? <h3>Cargando...</h3>:
+        allPosts.map((post) => (
+            <article class="w-52 max-sm:w-full h-52 max-sm:h-fit flex flex-col">
+                <span>Publicado el: {post.frontmatter.pubDate.toString().slice(0,10)}</span>
+                <p>{post.frontmatter.description}</p>
+                <figure>
+                    <img src={post.frontmatter.image['url']} alt={post.frontmatter.image['alt']} />
+                </figure>
+                <span>Autor {`${post.frontmatter.author.split(' ')[0]} ${post.frontmatter.author.split(' ')[1][0]} ${post.frontmatter.author.split(' ')[2]}`}.</span>
+                <a href={post.url}>Titulo {post.frontmatter.title}</a>
+            </article>
+    )) 
+    }
+</div>
