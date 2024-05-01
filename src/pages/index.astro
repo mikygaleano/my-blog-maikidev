@@ -9,8 +9,9 @@ const astroNauta: string = '/astronaut.png';
 ---
 
 <BaseLayouts titlePage={pageTitle} background={'bg-slate-700'}>
+  <MoveParticlesAnimate/>
     <div class="w-full h-screen">
-      <div class="w-full h-full grid grid-cols-2 max-md:grid-flow-col max-md:grid-rows-2 gap-1">
+      <div class="w-full h-full grid grid-cols-2 max-md:grid-flow-col max-md:grid-rows-2 gap-1 max-md:gap-0">
         <div class="w-full h-full -rotate-3 col-start-1 flex flex-col gap-2 justify-center items-center max-md:ml-[50%]">
           <div class="w-auto animate-bounce -mb-14">
             <span class="text-center pt-10 animate-backgroundGradientAnimation text-4xl max-md:text-3xl font-black font-BlackStormBlack">¡Bienvenidos</span>
@@ -18,11 +19,11 @@ const astroNauta: string = '/astronaut.png';
           <h1 class="text-center pt-10 animate-backgroundGradientAnimation text-4xl max-md:text-3xl font-black font-BlackStormBlack">a MaikiBlog!</h1>
           <span class="pt-2 text-center text-white font-medium">Acompáñenme en este fantástico  viaje</span>
         </div>
-        <div class="w-full h-full grid grid-cols-2 items-center gap-3 max-md:flex max-md:flex-col max-md:ml-[50%]">
-          <figure class="w-56 h-60">
-            <img class="w-full h-full col-start-1" src={astroNauta} alt="">
+        <div class="w-full h-full grid grid-cols-2 items-center gap-2 max-md:flex max-md:flex-col max-md:ml-[50%] max-md:-mt-10">
+          <figure class="w-56 max-md:w-9/12 h-60 col-start-1">
+            <img class="w-full h-full" src={astroNauta} alt="">
           </figure>
-          <a class="w-24 h-8 col-start-2 text-lg font-bold text-center flex items-center justify-center rounded-md shadow-lg bg-yellow-200 hover:scale-100" href="/blog"><span class=" animate-pulse">Blog</span></a>
+          <a class="w-28 h-12 col-start-2 text-lg font-bold text-center flex items-center justify-center rounded-md shadow-lg bg-yellow-200 hover:scale-100" href="/blog"><span class=" animate-pulse">Blog</span></a>
         </div>
       </div>
     </div>
