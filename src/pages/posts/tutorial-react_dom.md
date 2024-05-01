@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdowndPostLayout.astro
-title: 'tutorial React router dom'
+title: 'React router dom'
 pubDate: 2024-04-29
 description: 'Este es la segunda publicación de mi nuevo blog'
 author: 'Michael Nicolas Galeano'

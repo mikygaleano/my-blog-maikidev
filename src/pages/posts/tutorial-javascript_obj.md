@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdowndPostLayout.astro
-title: 'tutorial programacíon orientada a obj en javascript'
+title: 'Obj en javascript'
 pubDate: 2024-04-16
 description: 'Este es la primera publicación de mi nuevo blog'
 author: 'Michael Nicolas Galeano'
