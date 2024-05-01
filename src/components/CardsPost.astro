@@ -4,18 +4,19 @@ const { allPosts } = Astro.props;
 
 ---
 
-<div class="w-full h-full mt-3 mb-5 m-auto grid grid-flow-row grid-cols-3 max-md:grid-cols-2 max-md:justify-center max-sm:grid-cols-1 justify-start items-start gap-2">
+<div class="w-full h-full mt-3 mb-5 m-auto grid grid-flow-row grid-cols-3 max-md:grid-cols-2 max-md:justify-center max-sm:grid-cols-1 justify-start items-start gap-1">
     {
         allPosts.length < 1? <h3>Cargando...</h3>:
-        allPosts.map((post) => (
-            <article class="w-52 max-sm:w-full min-h-60 max-sm:h-fit flex flex-col">
-                <span>Publicado el: {post.frontmatter.pubDate.toString().slice(0,10)}</span>
-                <p>{post.frontmatter.description}</p>
-                <figure>
+        allPosts.map((post: string | any) => (
+            <article class="w-64 max-sm:w-full h-[25rem] max-sm:h-fit flex flex-col border-2 border-slate-500 p-1 rounded-lg">
+                <p class="text-slate-400 font-light text-xs">Publicado el {post.frontmatter.pubDate.toString().slice(0,10)}</p>
+                <p class="text-slate-600 text-sm">{post.frontmatter.description}</p>
+                <figure class="object-contain">
                     <img src={post.frontmatter.image['url']} alt={post.frontmatter.image['alt']} />
                 </figure>
-                <span>Autor {`${post.frontmatter.author.split(' ')[0]} ${post.frontmatter.author.split(' ')[1][0]} ${post.frontmatter.author.split(' ')[2]}`}.</span>
-                <a href={post.url}>Titulo {post.frontmatter.title}</a>
+                <span class="font-semibold text-sm">Autor {`${post.frontmatter.author.split(' ')[0]} ${post.frontmatter.author.split(' ')[1][0]} ${post.frontmatter.author.split(' ')[2]}`}.</span>
+                <span class="font-bold text-sm">{post.frontmatter.title}</span>
+                <a class="w-36 h-10 mb-2 rounded-md shadow-md bg-green-400 grid place-content-center text-white" href={post.url}>Ver más</a>
             </article>
     )) 
     }
