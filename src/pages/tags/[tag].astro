@@ -1,6 +1,7 @@
 ---
 import CardsPost from "../../components/CardsPost.astro";
 import BaseLayouts from "../../layouts/BaseLayouts.astro";
+import Etiquetas from "./etiquetas.astro";
 
 export async function getStaticPaths() {
     const allPosts = await Astro.glob('../posts/*.md');
@@ -22,6 +23,7 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayouts titlePage={tag}>
+  <Etiquetas/>
   <p>Entradas etiquetadas con {tag}</p>
   <CardsPost allPosts={posts} /> 
 </BaseLayouts>
