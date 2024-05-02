@@ -1,5 +1,6 @@
 ---
-const astroNauta: string = '/astronaut.png';
+import ImageAstro from "./ImageAstro.astro";
+
 
 ---
 
@@ -9,12 +10,12 @@ const astroNauta: string = '/astronaut.png';
         <span class="text-center pt-10 animate-backgroundGradientAnimation text-4xl max-md:text-3xl font-black font-BlackStormBlack">¡Bienvenidos</span>
       </div>
       <h1 class="text-center pt-10 animate-backgroundGradientAnimation text-4xl max-md:text-3xl font-black font-BlackStormBlack">a MaikiBlog!</h1>
-      <span class="pt-2 text-center text-white font-medium">Acompáñenme en este fantástico  viaje</span>
+      <span class="pt-2 text-center text-black font-extrabold">Acompáñenme en este fantástico  viaje</span>
     </div>
     <div class="w-full h-full grid grid-cols-2 items-center gap-2 max-md:flex max-md:flex-col max-md:ml-[50%] max-md:-mt-10">
-      <figure class="w-56 max-md:w-9/12 h-60 col-start-1">
-        <img class="w-full h-full" src={astroNauta} alt="">
+      <figure class="w-full h-60 col-start-1">
+        <ImageAstro/>
       </figure>
-      <a class="w-28 h-12 col-start-2 text-lg font-bold text-center flex items-center justify-center rounded-md shadow-lg bg-yellow-200 hover:scale-100" href="/blog"><span class=" animate-pulse">Blog</span></a>
+      <a class="w-28 h-12 col-start-2 text-lg font-bold text-center flex items-center justify-center rounded-md shadow-lg bg-yellow-400 hover:scale-100" href="/blog"><span class=" animate-pulse">Blog</span></a>
     </div>
 </div>

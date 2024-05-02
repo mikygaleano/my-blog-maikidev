@@ -1,15 +1,21 @@
 ---
+import ImageAstro from "../components/ImageAstro.astro"
 import BaseLayouts from "../layouts/BaseLayouts.astro"
 
 
 const titlePage = 'about'
 ---
 
-    <BaseLayouts titlePage={titlePage}>
-        <div class="w-full h-screen">
+<BaseLayouts titlePage={titlePage} background={'bg-yellow-100'}>
+    <div class="w-full h-screen flex flex-col items-center gap-2">
+        <div class="w-9/12 h-fit border rounded-xl p-5">
             <h1>Sobre mí</h1>
             <h2>... ¡y mi nuevo sitio Astro!</h2>
-            <p>Estoy trabajando en el tutorial introductorio de programacíon orientada a obj con javascript. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
+            <p>Estoy trabajando en el tutorial introductorio de programacíon orientada a obj con javascript.</p>
             <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
         </div>
-    </BaseLayouts>
+        <figure class="w-60 h-fit">
+            <ImageAstro/>
+        </figure>
+    </div>
+</BaseLayouts>
