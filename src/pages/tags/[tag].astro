@@ -24,6 +24,8 @@ const { posts } = Astro.props;
 
 <BaseLayouts titlePage={tag} background={'bg-yellow-100'}>
   <Etiquetas/>
-  <p>Entradas etiquetadas con {tag}</p>
-  <CardsPost allPosts={posts} /> 
+  <div class="w-full h-screen max-2xl:min-h-screen">
+    <p>Entradas etiquetadas con {tag}</p>
+    <CardsPost allPosts={posts} /> 
+  </div>
 </BaseLayouts>
