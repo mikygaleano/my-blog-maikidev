@@ -1,5 +1,6 @@
 ---
 import CardsPost from "../../components/CardsPost.astro";
+import CardTags from "../../components/CardTags.astro";
 import BaseLayouts from "../../layouts/BaseLayouts.astro";
 import Etiquetas from "./etiquetas.astro";
 
@@ -24,8 +25,10 @@ const { posts } = Astro.props;
 
 <BaseLayouts titlePage={tag} background={'bg-yellow-100'}>
   <Etiquetas/>
-  <div class="w-full h-screen max-2xl:min-h-screen">
+  <div class="w-full min-h-screen max-2xl:min-h-screen">
     <p>Entradas etiquetadas con {tag}</p>
-    <CardsPost allPosts={posts} /> 
+    <div class="w-full min-h-full flex flex-row flex-wrap gap-2">
+      <CardTags cardPost={posts}/>
+    </div>
   </div>
 </BaseLayouts>
