@@ -1,0 +1,37 @@
+---
+
+const {allPosts} = Astro.props;
+
+const arrDate = allPosts.map((post: string | any) => new Date (post.frontmatter.pubDate.toString().slice(0,10)));
+let maxDate = new Date(Math.max.apply(null,arrDate));
+
+let cardPrincipal = allPosts.filter((post: string | any) => {
+    // Convertir la fecha de la publicación actual a un objeto Date
+    let postDate = new Date(post.frontmatter.pubDate);
+    // Retornar true si la fecha de la publicación es igual a la fecha máxima
+    return postDate.getTime() === maxDate.getTime();
+});
+
+---
+
+{
+    cardPrincipal.length < 1? <h3>Cargando...</h3>:
+    cardPrincipal.map((post: string | any) => (
+        <article class="max-md:w-full w-80 h-52 max-md:h-64 border border-cyan-500 p-1 rounded-lg bg-cyan-50">
+            <div class="w-full h-5 flex flex-row justify-between text-slate-400 font-light text-xs">
+                <p class="">{post.frontmatter.pubDate.toString().slice(0, 10)}</p>
+                <span class="">{`${post.frontmatter.author.split(' ')[0]} ${post.frontmatter.author.split(' ')[1][0]}. ${post.frontmatter.author.split(' ')[2]}`}</span>
+            </div>
+            <div class="max-w-full h-full grid grid-cols-2 grid-flow-row">
+                <figure class="col-start-1">
+                    <img class="object-cover" src={post.frontmatter.image['url']} alt={post.frontmatter.image['alt']} />
+                </figure>
+                <div class="col-start-2 w-full h-full">
+                    <span class="font-bold text-sm">{post.frontmatter.title}</span>
+                    <p class="text-slate-600 text-sm">{post.frontmatter.description}</p>
+                    <a class="w-28 h-5 mt-10 max-md:mt-28 rounded-md shadow-md bg-green-400 grid place-content-center text-white" href={post.url}>Ver más</a>
+                </div>
+            </div>   
+        </article>
+    ))
+}
