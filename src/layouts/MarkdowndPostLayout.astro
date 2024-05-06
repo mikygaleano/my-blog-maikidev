@@ -12,13 +12,13 @@ const { frontmatter } = Astro.props;
         <title>Post {frontmatter.title}</title>
     </head>
     <body>
-        <BaseLayouts background={'bg-yellow-100'}>
-            <span>Bucar por etiquetas</span>
-            <Etiquetas/>
-            <h2>Post</h2>
-            <h3>{frontmatter.title}</h3>
-            <p>Escrito por {frontmatter.author}</p>
-            <slot />
+        <BaseLayouts background={'bg-slate-300'}>
+                <span>Bucar por etiquetas</span>
+                <Etiquetas/>
+                <h2>Post</h2>
+                <h3>{frontmatter.title}</h3>
+                <p>Escrito por {frontmatter.author}</p>
+                <slot />
         </BaseLayouts>
     </body>
 </html>
