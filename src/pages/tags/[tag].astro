@@ -23,11 +23,11 @@ const { posts } = Astro.props;
 
 ---
 
-<BaseLayouts titlePage={tag} background={'bg-yellow-100'}>
-  <Etiquetas/>
-  <div class="w-full min-h-screen max-2xl:min-h-screen">
+<BaseLayouts titlePage={tag} background={'bg-black'}>
+  <Etiquetas textColor={'text-slate-300'}/>
+  <div class="w-full min-h-screen max-2xl:min-h-screen text-slate-300">
     <p>Entradas etiquetadas con {tag}</p>
-    <div class="w-full min-h-full flex flex-row flex-wrap gap-2">
+    <div class="mt-5 w-full min-h-full flex flex-row flex-wrap gap-2">
       <CardTags cardPost={posts}/>
     </div>
   </div>
