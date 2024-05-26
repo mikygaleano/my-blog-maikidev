@@ -14,11 +14,11 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
 
 <BaseLayouts titlePage={titlePage} background={'bg-black'}>
-   <div class="w-full h-screen max-2xl:min-h-screen text-slate-300">
+   <div class="w-full h-full text-slate-300">
       <h1>Bienvenido a mi blog</h1>
       <p>Aquí es donde publicare mi viaje en la programacíon</p>
       <Etiquetas textColor={'text-slate-300'}/>
-      <div class="w-full max-h-full flex flex-row flex-wrap items-start gap-1">
+      <div class="w-full max-h-full flex flex-row flex-wrap gap-1">
          <CardPrincipalPost allPosts={allPosts} />
          <CardsPost allPosts={allPosts} />
       </div>
