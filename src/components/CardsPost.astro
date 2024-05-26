@@ -47,7 +47,7 @@ let maxDate = new Date(Math.max.apply(null,arrDate));
 
                     <div class="content">
                         {post.frontmatter.description}
-                        <br>
+                        <br/>
                         <a class="button is-primary" href={post.url}>Ver más</a>
                         <br />
                         <time datetime={post.frontmatter.pubDate.toString().slice(0, 10)}>{post.frontmatter.pubDate.toString().slice(0, 10)}</time>
