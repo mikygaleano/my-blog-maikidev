@@ -13,11 +13,13 @@ const { frontmatter } = Astro.props;
     </head>
     <body>
         <BaseLayouts background={'bg-slate-300'}>
+            <div class="w-full" >
                 <Etiquetas textColor={'text-black'}/>
                 <h2>Post</h2>
                 <h3>{frontmatter.title}</h3>
                 <p>Escrito por {frontmatter.author}</p>
                 <slot />
+            </div>
         </BaseLayouts>
     </body>
 </html>
