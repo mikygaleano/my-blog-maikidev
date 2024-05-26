@@ -9,7 +9,7 @@ const { textColor } = Astro.props;
 
 
 <div class=`tags ${textColor}`>
-  <details>
+  <details class=`tags ${textColor}`>
     <summary>buscar por etiquetas</summary>
     <ul class="w-full flex flex-row flex-wrap">
       {tags.map((tag) => (

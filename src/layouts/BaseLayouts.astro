@@ -13,9 +13,9 @@ const { titlePage, background } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{titlePage}</title>
 	</head>
-	<body class=`w-full h-screen ${background}`>
+	<body class=`${background}`>
 		<Header/>
-        <section class="w-full min-h-full p-2 flex justify-center bg-black">
+        <section class="w-full min-h-full p-2 flex justify-center">
 			<slot/>
 		</section>
 		<Footer/>
