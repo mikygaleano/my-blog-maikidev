@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdowndPostLayout.astro
 title: 'React router dom'
 pubDate: 2024-04-29
-description: 'Este es la segunda publicación de mi nuevo blog'
+description: 'Asi es como aprendi a usar react router dom'
 author: 'Michael Nicolas Galeano'
 image:
     url: '/icons/react-javascript-js-framework-facebook-svgrepo-com.svg'
