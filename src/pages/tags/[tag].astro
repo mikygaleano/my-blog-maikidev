@@ -1,5 +1,5 @@
 ---
-import CardTags from "../../components/CardTags.astro";
+import CardsPost from "../../components/CardsPost.astro";
 import BaseLayouts from "../../layouts/BaseLayouts.astro";
 import Etiquetas from "./etiquetas.astro";
 
@@ -28,7 +28,7 @@ const { posts } = Astro.props;
     <Etiquetas textColor={'text-slate-300'}/>
     <div class="w-full h-full text-slate-300">
       <div class="w-full h-full flex flex-row flex-wrap gap-1">
-        <CardTags cardPost={posts}/>
+        <CardsPost allPosts={posts}/>
       </div>
     </div>
   </div>
