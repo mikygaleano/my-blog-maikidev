@@ -2,18 +2,6 @@
 
 const { allPosts } = Astro.props;
 
-let order: [] = allPosts
-        .sort((a: string | any, b: string | any) =>
-            // Filtrar las tarjetas para excluir la tarjeta principal
-            //let postDate = new Date(post.frontmatter.pubDate);
-            //return postDate.getTime() !== maxDate.getTime();
-            b.frontmatter.pubDate.toString().slice(0, 10) - a.frontmatter.pubDate.toString().slice(0, 10)
-        )
-
-console.log(order)
-
-const arrDate = allPosts.map((post: string | any) => new Date (post.frontmatter.pubDate.toString().slice(0,10)));
-let maxDate = new Date(Math.max.apply(null,arrDate));
 ---
     <!DOCTYPE html>
     <html lang="en"></html>
@@ -25,13 +13,10 @@ let maxDate = new Date(Math.max.apply(null,arrDate));
     !allPosts ? <h3>Cargando...</h3>:
     allPosts
         .sort((a: { frontmatter: { pubDate: string } }, b: { frontmatter: { pubDate: string } }) => 
-            // Filtrar las tarjetas para excluir la tarjeta principal
-            //let postDate = new Date(post.frontmatter.pubDate);
-            //return postDate.getTime() !== maxDate.getTime();
             new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
         )
         .map((post: { frontmatter: { title: string, author: string, pubDate: string, description: string, image: { url: string, alt: string } }, url: string }) => (
-            <div class="card">
+            <div class="card w-80 max-sm:w-full">
                 <div class="card-image">
                     <figure class="image is-4by3">
                     <img
@@ -59,7 +44,7 @@ let maxDate = new Date(Math.max.apply(null,arrDate));
                     <div class="content">
                         {post.frontmatter.description}
                         <br/>
-                        <a class="button is-primary" href={post.url}>Ver más</a>
+                        <a class="button is-primary pt-2" href={post.url}>Ver más</a>
                         <br />
                         <time datetime={post.frontmatter.pubDate.toString().slice(0, 10)}>{post.frontmatter.pubDate.toString().slice(0, 10)}</time>
                     </div>

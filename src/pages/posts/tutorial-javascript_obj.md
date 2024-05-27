@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdowndPostLayout.astro
 title: 'Obj en javascript'
 pubDate: 2024-04-16
-description: 'Este es la primera publicación de mi nuevo blog'
+description: 'Este es la primera publicación de mi nuevo blog, tutorial sobre obj en javascript'
 author: 'Michael Nicolas Galeano'
 image:
     url: '/icons/javascript-svgrepo-com.svg'
