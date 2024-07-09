@@ -11,7 +11,7 @@ const { allPosts = [], newPost = [] } = Astro.props;
     </head>
     
 
-<div class="grid grid-cols-1 sm:grid-cols-12 gap-10">
+<div class="max-w-full grid grid-cols-1 sm:grid-cols-12 gap-16 max-md:10">
     
         {
             newPost.length > 0 ? (
@@ -52,12 +52,12 @@ const { allPosts = [], newPost = [] } = Astro.props;
             ))): ''
         }
 
-    <div class="sm:col-span-6 lg:col-span-4">
+    <div class="w-full sm:col-span-6">
 
         {
             allPosts.length > 0? (
             allPosts.map((posts: any) => (
-                <div class="flex items-start mb-3 pb-3 bg-slate-100 rounded-md">
+                <div class="w-full flex items-start mb-3 pb-3 bg-slate-100 rounded-md">
                     <a href="#" class="inline-block mr-3">
                         <div class="w-20 h-20 bg-cover bg-center"
                             style={`background-image:url(${posts.frontmatter.image['url']})`}>
