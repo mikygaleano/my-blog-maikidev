@@ -1,12 +1,33 @@
 ---
-import Home from "../components/Home.astro";
 import BaseLayouts from "../layouts/BaseLayouts.astro";
+import Etiquetas from "./tags/etiquetas.astro";
 
+import CardsPost from "../components/CardsPost.astro"
 
 const pageTitle: string = "Página de inicio";
 
+
+const allPosts = await Astro.glob('../pages/posts/*.md');
+
+// Encontrar la fecha más reciente
+let maxUpdateDate = allPosts.reduce((maxDate, post) => {
+  const postDate = new Date(post.frontmatter.pubDate);
+  return postDate > maxDate ? postDate : maxDate;
+}, new Date(0)); // Fecha inicial muy antigua para comparar
+
+// Filtrar la publicación con la fecha más reciente
+let newPost = allPosts.filter(post => {
+  return new Date(post.frontmatter.pubDate).toString() === maxUpdateDate.toString();
+});
 ---
 
-<BaseLayouts titlePage={pageTitle} background={'bg-black'}>
-    <Home/>
+<BaseLayouts titlePage={pageTitle} background={'bg-white'}>
+     <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16 relative">
+        <div class="mb-10">
+            <h1 class="text-xl font-bold" >Bienvenido a mi blog</h1>
+            <p>Aquí es donde publicare mi viaje en la programacíon</p>
+            <Etiquetas textColor={'text-slate-300'}/>
+        </div>
+        <CardsPost allPosts={allPosts} newPost={newPost} />
+    </div>
 </BaseLayouts>
