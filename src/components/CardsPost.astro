@@ -1,31 +1,31 @@
 ---
 
-const { allPosts } = Astro.props;
+const { allPosts = [], newPost = [] } = Astro.props;
 
 ---
-    <!DOCTYPE html>
+
+<!DOCTYPE html>
     <html lang="en"></html>
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     </head>
+    
 
-    {
-    !allPosts ? <h3>Cargando...</h3>:
-    allPosts
-        .sort((a: { frontmatter: { pubDate: string } }, b: { frontmatter: { pubDate: string } }) => 
-            new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
-        )
-        .map((post: { frontmatter: { title: string, author: string, pubDate: string, description: string, image: { url: string, alt: string } }, url: string }) => (
-            <div class="card w-80 max-sm:w-full">
-                <div class="card-image">
-                    <figure class="image is-4by3">
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-10">
+    
+        {
+            newPost.length > 0 ? (
+            newPost.map((post: any) => (
+                <div class="w-[350px] max-md:w-full h-[450px] max-md:h-[600px] sm:col-span-6 lg:col-span-5 grid grid-rows-2 bg-slate-100 rounded-lg">
+                    <div class="card-image">
+                    <a href={post.url} class="image is-4by3">
                     <img
                         src={post.frontmatter.image['url']}
                         alt={post.frontmatter.image['alt']}
                     />
-                    </figure>
+                    </a>
                 </div>
-                <div class="card-content">
+                <div class="card-content mt-5">
                     <div class="media">
                     <div class="media-left">
                         <figure class="image is-48x48">
@@ -41,13 +41,36 @@ const { allPosts } = Astro.props;
                     </div>
                     </div>
 
-                    <div class="content">
-                        {post.frontmatter.description}
-                        <br/>
-                        <a class="button is-primary pt-2" href={post.url}>Ver más</a>
-                        <br />
-                        <time datetime={post.frontmatter.pubDate.toString().slice(0, 10)}>{post.frontmatter.pubDate.toString().slice(0, 10)}</time>
+                    <div class="content mt-3">
+                        <a href={post.url} class="text-gray-900 font-medium hover:text-indigo-600 leading-none">
+                            {post.frontmatter.description}</a>                    
                     </div>
                 </div>
-            </div>
-        ))}
+                <time class="relative bottom-0 p-5" datetime={post.frontmatter.pubDate.toString().slice(0, 10)}>{post.frontmatter.pubDate.toString().slice(0, 10)}</time>
+
+                </div>
+            ))): ''
+        }
+
+    <div class="sm:col-span-6 lg:col-span-4">
+
+        {
+            allPosts.length > 0? (
+            allPosts.map((posts: any) => (
+                <div class="flex items-start mb-3 pb-3 bg-slate-100 rounded-md">
+                    <a href="#" class="inline-block mr-3">
+                        <div class="w-20 h-20 bg-cover bg-center"
+                            style={`background-image:url(${posts.frontmatter.image['url']})`}>
+                        </div>
+                    </a>
+                    <div class="text-sm">
+                        <p class="text-gray-600 text-xs">{posts.frontmatter.pubDate.toString().slice(0, 10)}</p>
+                        <a href={posts.url} class="text-gray-900 font-medium hover:text-indigo-600 leading-none">
+                            {posts.frontmatter.description}</a>
+                    </div>
+                </div>
+            ))): <p>cargando</p>
+        }
+        
+    </div>
+</div>
