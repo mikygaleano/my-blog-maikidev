@@ -2,7 +2,8 @@
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Etiquetas from '../pages/tags/etiquetas.astro';
-import BaseLayouts from './BaseLayouts.astro'
+
+
 const { frontmatter } = Astro.props;
 ---
 
@@ -15,12 +16,11 @@ const { frontmatter } = Astro.props;
     </head>
     <body>
         <Header/>
-        <section class="bg-slate-300 w-full min-h-full p-2 flex justify-center" >
-            <div class="w-full" >
+        <section class="bg-white w-full min-h-full p-2 flex justify-center" >
+            <div class="w-10/12 max-md:w-full" >
                 <Etiquetas textColor={'text-black'}/>
-                <h2>Post</h2>
-                <h3>{frontmatter.title}</h3>
-                <p>Escrito por {frontmatter.author}</p>
+                <h1 class="text-black text-xl font-bold">{frontmatter.title}</h1>
+                <p class="text-slate-400 text-sm mb-3">Escrito por {frontmatter.author}</p>
                 <slot />
             </div>
         </section>
