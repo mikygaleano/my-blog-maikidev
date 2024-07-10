@@ -23,9 +23,15 @@ let newPost = allPosts.filter(post => {
 
 <BaseLayouts titlePage={pageTitle} background={'bg-white'}>
      <div class="max-w-[90%] max-md:max-w-screen mx-auto p-5 max-md:p-1 sm:p-10 md:p-16 relative">
+        <div class="w-full h-fit flex flex-col items-center gap-2 mb-5">
+            <div class="mt-10 w-9/12 border rounded-xl p-5 text-slate-600">
+                <h2>Sobre mí</h2>
+                <h2>... ¡y mi nuevo sitio Astro!</h2>
+                <p>¡Hola bienvenidos! aquí es donde publicare mi viaje en la programacíon</p>
+                <p>Este sitio se irá actualizando a medida que vaya completando más partes de los apuntes, ¡así que no dejes de visitarlo para ver cómo va esta aventura!</p>
+            </div>
+        </div>
         <div class="mb-10">
-            <h1 class="text-xl font-bold" >Bienvenido a mi blog</h1>
-            <p>Aquí es donde publicare mi viaje en la programacíon</p>
             <Etiquetas textColor={'text-slate-300'}/>
         </div>
         <CardsPost allPosts={allPosts} newPost={newPost} />

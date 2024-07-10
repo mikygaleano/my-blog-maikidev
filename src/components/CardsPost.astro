@@ -63,9 +63,9 @@ const { allPosts = [], newPost = [] } = Astro.props;
                             style={`background-image:url(${posts.frontmatter.image['url']})`}>
                         </div>
                     </a>
-                    <div class="text-sm">
+                    <div class="text-sm p-1">
                         <p class="text-gray-600 text-xs">{posts.frontmatter.pubDate.toString().slice(0, 10)}</p>
-                        <a href={posts.url} class="text-gray-900 font-medium hover:text-indigo-600 leading-none">
+                        <a href={posts.url} class="text-gray-900 font-medium hover:text-indigo-600 leading-none max-w-[12ch]">
                             {posts.frontmatter.description}</a>
                     </div>
                 </div>
