@@ -23,8 +23,8 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayouts titlePage={tag} background={'bg-white'}>
-  <div class="w-10/12 h-screen">
-    <p class="text-slate-300">Entradas etiquetadas con {tag}</p>
+  <div class="w-10/12 h-screen z-10">
+    <p class="text-slate-500">Entradas etiquetadas con {tag}</p>
     <Etiquetas textColor={'text-slate-300'}/>
     <div class="w-full h-full text-slate-300">
       <div class="w-full h-full flex flex-row flex-wrap gap-1 mt-10">
