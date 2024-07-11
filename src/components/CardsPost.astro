@@ -16,7 +16,7 @@ const { allPosts = [], newPost = [] } = Astro.props;
         {
             newPost.length > 0 ? (
             newPost.map((post: any) => (
-                <div class="relative w-[350px] max-md:w-full h-[300px] sm:col-span-6 lg:col-span-5 grid grid-rows-2 bg-slate-300 bg-opacity-15 rounded-lg">
+                <div class="relative w-[350px] max-md:w-full h-[300px] sm:col-span-6 lg:col-span-5 grid grid-rows-2 bg-slate-300 bg-opacity-15 rounded-lg z-10">
                     
                 <div class="card-content mt-5">
                     <div class="media">
@@ -51,7 +51,7 @@ const { allPosts = [], newPost = [] } = Astro.props;
         {
             allPosts.length > 0? (
             allPosts.map((posts: any) => (
-                <div class="w-full h-[100px] flex items-start mb-3 pb-3 bg-slate-100 rounded-md">
+                <div class="w-full h-[100px] flex items-start mb-3 pb-3 bg-slate-100 rounded-md z-10">
                     <a href="#" class="inline-block mr-3">
                         <div class="w-20 h-20 bg-contain bg-center"
                             style={`background-image:url(${posts.frontmatter.image['url']})`}>
