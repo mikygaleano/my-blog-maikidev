@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdowndPostLayout.astro
 title: 'React router dom'
 pubDate: 2024-04-29
-description: 'Asi es como aprendi a usar react router dom'
+description: 'Con React, me di cuenta de la importancia de tener una navegación eficiente dentro de mis aplicaciones. Asi aprendi React Router DOM'
 author: 'Michael Nicolas Galeano'
 image:
     url: '/icons/react-javascript-js-framework-facebook-svgrepo-com.svg'
