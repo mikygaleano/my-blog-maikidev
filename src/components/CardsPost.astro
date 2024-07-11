@@ -36,7 +36,7 @@ const { allPosts = [], newPost = [] } = Astro.props;
                     </div>
 
                     <div class="content mt-5">
-                        <a href={post.url} class="text-gray-900 font-md hover:text-indigo-600 leading-none truncate">
+                        <a href={post.url} class="text-gray-900 font-md hover:text-indigo-600 truncate leading-5">
                             {post.frontmatter.description}</a>                    
                     </div>
                 </div>
@@ -59,8 +59,8 @@ const { allPosts = [], newPost = [] } = Astro.props;
                     </a>
                     <div class="text-sm flex flex-col gap-3 p-1">
                         <p class="text-gray-600 text-xs">{posts.frontmatter.pubDate.toString().slice(0, 10)}</p>
-                        <a href={posts.url} class="text-gray-900 font-md hover:text-indigo-600 leading-none max-md:w-[150px] w-[250px] mini-card_truncate">
-                            {posts.frontmatter.description}</a>
+                        <a href={posts.url} class="text-gray-900 font-bold hover:text-indigo-600 w-full">
+                            {posts.frontmatter.title}</a>
                     </div>
                 </div>
             ))): <p>cargando</p>
